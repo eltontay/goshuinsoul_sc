@@ -3,11 +3,11 @@
   "chain": "edge1-ae94",
   "datasources": [
     {
-      "name": "Example",
-      "address": "0x0000000000000000000000000000000000000000",
-      "startBlock": 0,
+      "name": "SoulboundToken",
+      "address": "0xaf6F49b132C15f5b98Be1dc0305870B24B7abbC4",
+      "startBlock": 293,
       "module": [
-        "ownable"
+        "erc721"
       ]
     }
   ]

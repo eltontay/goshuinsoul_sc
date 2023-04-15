@@ -3,10 +3,10 @@
   "chain": "localhost",
   "datasources": [
     {
-      "name": "Example",
-      "address": "0x0000000000000000000000000000000000000000",
+      "name": "SoulboundToken",
+      "address": "0xaf6F49b132C15f5b98Be1dc0305870B24B7abbC4",
       "startBlock": 0,
-      "module": ["ownable"]
+      "module": ["erc721"]
     }
   ]
 }

@@ -5,23 +5,28 @@ features:
   - ipfsOnEthereumContracts
 dataSources:
   - kind: ethereum/contract
-    name: ownable
+    name: erc721
     network: edge1-ae94
     source:
-      address: '0x0000000000000000000000000000000000000000'
-      abi: Ownable
-      startBlock: 0
+      address: '0xaf6F49b132C15f5b98Be1dc0305870B24B7abbC4'
+      abi: IERC721
+      startBlock: 293
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - Ownable
+        - ERC721Contract
       abis:
-        - name: Ownable
-          file: ../node_modules/@openzeppelin/contracts/build/contracts/Ownable.json
+        - name: IERC721
+          file: >-
+            ../node_modules/@openzeppelin/contracts/build/contracts/IERC721Metadata.json
       eventHandlers:
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
       file: >-
-        ../node_modules/.pnpm/@openzeppelin+subgraphs@0.1.8-5/node_modules/@openzeppelin/subgraphs/src/datasources/ownable.ts
+        ../node_modules/.pnpm/@openzeppelin+subgraphs@0.1.8-5/node_modules/@openzeppelin/subgraphs/src/datasources/erc721.ts
