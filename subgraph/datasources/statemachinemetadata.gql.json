@@ -1,0 +1,51 @@
+[
+  {
+    "name": "StateMachineMetadataContract",
+    "immutable": true,
+    "fields": [
+      {
+        "name": "currentState",
+        "type": "Bytes"
+      },
+      {
+        "name": "param1",
+        "type": "String"
+      },
+      {
+        "name": "param2",
+        "type": "String"
+      },
+      {
+        "name": "stateTransitions",
+        "type": "StateTransition!",
+        "derived": "contract"
+      }
+    ]
+  },
+  {
+    "name": "StateTransition",
+    "immutable": true,
+    "fields": [
+      {
+        "name": "contract",
+        "type": "StateMachineMetadataContract!"
+      },
+      {
+        "name": "actor",
+        "type": "Account!"
+      },
+      {
+        "name": "timestamp",
+        "type": "BigInt!"
+      },
+      {
+        "name": "fromState",
+        "type": "Bytes"
+      },
+      {
+        "name": "toState",
+        "type": "Bytes"
+      }
+    ]
+  }
+]

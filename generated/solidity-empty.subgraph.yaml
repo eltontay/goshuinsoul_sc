@@ -1,0 +1,27 @@
+specVersion: 0.0.4
+schema:
+  file: solidity-empty.schema.graphql
+features:
+  - ipfsOnEthereumContracts
+dataSources:
+  - kind: ethereum/contract
+    name: ownable
+    network: edge1-ae94
+    source:
+      address: '0x0000000000000000000000000000000000000000'
+      abi: Ownable
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Ownable
+      abis:
+        - name: Ownable
+          file: ../node_modules/@openzeppelin/contracts/build/contracts/Ownable.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: >-
+        ../node_modules/.pnpm/@openzeppelin+subgraphs@0.1.8-5/node_modules/@openzeppelin/subgraphs/src/datasources/ownable.ts

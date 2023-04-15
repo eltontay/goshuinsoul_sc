@@ -1,0 +1,14 @@
+{
+  "output": "generated/solidity-empty.",
+  "chain": "edge1-ae94",
+  "datasources": [
+    {
+      "name": "Example",
+      "address": "0x0000000000000000000000000000000000000000",
+      "startBlock": 0,
+      "module": [
+        "ownable"
+      ]
+    }
+  ]
+}
